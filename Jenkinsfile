@@ -10,16 +10,14 @@ pipeline {
         stage('Build') {
             steps{
                 echo "Build"
-                sh "ls -a"
                 sh "./gradlew clean test jar"
             }
         }
         stage('Results') {
             steps{
                 echo "Results"
-                sh 'make check || true'
-                jUnit '**/build/test-results/test/TEST-*.xml'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                junit '**/build/test-results/test/TEST-*.xml'
+                archiveArtifacts 'build/libs/*'
             }
         }
     }

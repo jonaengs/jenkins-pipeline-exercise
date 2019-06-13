@@ -10,8 +10,8 @@ pipeline {
         stage('Build') {
             steps{
                 echo "Build"
-                ls
-                sh ./gradlew clean test jar
+                sh "ls -a"
+                // sh ./gradlew clean test jar
             }
         }
         stage('Results') {

@@ -17,7 +17,7 @@ pipeline {
         stage('Results') {
             steps{
                 echo "Results"
-                sh "ls -a"
+                sh 'make check || true'
                 jUnit '**/build/test-results/test/TEST-*.xml'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }

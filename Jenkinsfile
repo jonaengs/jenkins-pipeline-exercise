@@ -11,7 +11,7 @@ pipeline {
             steps{
                 echo "Build"
                 sh "ls -a"
-                // sh ./gradlew clean test jar
+                sh "./gradlew clean test jar"
             }
         }
         stage('Results') {

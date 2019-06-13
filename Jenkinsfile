@@ -17,7 +17,6 @@ pipeline {
         stage('Results') {
             steps{
                 echo "Results"
-                ls
             }
         }
     }

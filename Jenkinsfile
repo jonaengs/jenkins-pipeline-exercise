@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Results') {
             steps{
-                echo "Results
+                echo "Results"
                 sh "ls -a"
                 jUnit '**/build/test-results/test/TEST-*.xml'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
